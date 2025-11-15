@@ -21,7 +21,7 @@ const TaskListPagination = ({
     const pages = [];
 
     if (totalPages < 4) {
-      // hiện toàn bộ
+      // Display All
       for (let i = 1; i <= totalPages; i++) {
         pages.push(i);
       }
@@ -43,7 +43,7 @@ const TaskListPagination = ({
     <div className="flex justify-center mt-4">
       <Pagination>
         <PaginationContent>
-          {/* Trước */}
+          {/* Before */}
           <PaginationItem>
             <PaginationPrevious
               onClick={page === 1 ? undefined : handlePrev}
@@ -71,7 +71,7 @@ const TaskListPagination = ({
             </PaginationItem>
           ))}
 
-          {/* Sau */}
+          {/* After */}
           <PaginationItem>
             <PaginationNext
               onClick={page === totalPages ? undefined : handleNext}
