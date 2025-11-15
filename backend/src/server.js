@@ -7,14 +7,13 @@ import path from "path";
 
 dotenv.config();
 
-const port = process.env.PORT || 5001;
+const PORT = process.env.PORT || 5001;
 const __dirname = path.resolve();
 
 const app = express();
 
 //middleware
 app.use(express.json());
-
 if (process.env.NODE_ENV !== "production") {
   app.use(cors({ origin: "http://localhost:5173" }));
 }
@@ -31,7 +30,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 connectDB().then(() => {
-  app.listen(port, () => {
-    console.log("Server is running on port 5001");
+  app.listen(PORT, () => {
+    console.log(`server bắt đầu trên cổng ${PORT}`);
   });
 });

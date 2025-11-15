@@ -12,6 +12,7 @@ const StatsAndFilter = ({
 }) => {
   return (
     <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+      {/* Display status of active and complete */}
       <div className="flex gap-3">
         <Badge
           variant="secondary"
@@ -24,6 +25,8 @@ const StatsAndFilter = ({
           {completedTasksCount} {FilterType.completed}
         </Badge>
       </div>
+
+      {/* Button "filter"*/}
       <div className="flex flex-col gap-2 sm:flex-row">
         {Object.keys(FilterType).map((type) => (
           <Button

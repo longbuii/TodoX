@@ -5,7 +5,7 @@ export const getAllTasks = async (req, res) => {
   const now = new Date();
 
   let startDate;
-
+  // Option to Filter of DateTime!
   switch (filter) {
     case "today": {
       startDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());

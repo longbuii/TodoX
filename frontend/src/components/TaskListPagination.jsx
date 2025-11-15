@@ -43,7 +43,7 @@ const TaskListPagination = ({
     <div className="flex justify-center mt-4">
       <Pagination>
         <PaginationContent>
-          {/* Before */}
+          {/* Prev */}
           <PaginationItem>
             <PaginationPrevious
               onClick={page === 1 ? undefined : handlePrev}
@@ -71,7 +71,7 @@ const TaskListPagination = ({
             </PaginationItem>
           ))}
 
-          {/* After */}
+          {/* Next */}
           <PaginationItem>
             <PaginationNext
               onClick={page === totalPages ? undefined : handleNext}

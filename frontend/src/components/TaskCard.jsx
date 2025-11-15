@@ -42,6 +42,7 @@ const TaskCard = ({ task, index, handleTaskChanged }) => {
     }
   };
 
+  // Config to button "Check/Checkout"
   const toggleTaskCompleteButton = async () => {
     try {
       if (task.status == "active") {

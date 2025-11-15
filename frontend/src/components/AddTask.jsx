@@ -20,7 +20,7 @@ const AddTask = ({ handleNewTaskAdded }) => {
         toast.success(`Task: ${newTaskTitle} added successfully!`);
         handleNewTaskAdded();
       } catch (error) {
-        console.error("Error adding task:", error);
+        console.error("Error adding task?", error);
         toast.error("Failed to add task. Please try again later.");
       }
 
@@ -38,7 +38,7 @@ const AddTask = ({ handleNewTaskAdded }) => {
   };
 
   return (
-    <Card className="p-6 border-0 bg-gradient-card shadow-custom-lg">
+    <Card className="p-4 border-0 bg-gradient-card shadow-custom-lg">
       <div className="flex flex-col gap-3 sm:flex-row">
         <Input
           type="text"
