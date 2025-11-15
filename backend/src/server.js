@@ -7,7 +7,7 @@ import path from "path";
 
 dotenv.config();
 
-const PORT = process.env.PORT || 5001;
+const port = process.env.PORT || 5001;
 const __dirname = path.resolve();
 
 const app = express();
@@ -31,7 +31,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 connectDB().then(() => {
-  app.listen(PORT, () => {
+  app.listen(port, () => {
     console.log("Server is running on port 5001");
   });
 });
