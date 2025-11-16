@@ -14,9 +14,8 @@ const AddTask = ({ handleNewTaskAdded }) => {
     if (newTaskTitle.trim()) {
       try {
         // Example API call to add a new task
-        await api.post("/tasks", {
-          title: newTaskTitle,
-        });
+        await api.post("/tasks", { title: newTaskTitle });
+
         toast.success(`Task: ${newTaskTitle} added successfully!`);
         handleNewTaskAdded();
       } catch (error) {

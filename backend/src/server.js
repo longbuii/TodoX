@@ -1,5 +1,5 @@
 import express from "express";
-import tasksRouter from "./routers/tasksRouters.js";
+import taskRouter from "./routers/tasksRouters.js";
 import { connectDB } from "./config/db.js";
 import dotenv from "dotenv";
 import cors from "cors";
@@ -12,15 +12,17 @@ const __dirname = path.resolve();
 
 const app = express();
 
-//middleware
+// middlewares
 app.use(express.json());
+
 if (process.env.NODE_ENV !== "production") {
   app.use(cors({ origin: "http://localhost:5173" }));
 }
 
-//routes
-app.use("/api/tasks", tasksRouter);
+// API ROUTES (must be before static serving)
+app.use("/api/tasks", taskRouter);
 
+// Static files (only in production)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
